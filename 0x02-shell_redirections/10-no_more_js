@@ -1,2 +1,2 @@
 #!/bin/bash
-rm -r *.js
+grep -r *.js | rm -fr 
