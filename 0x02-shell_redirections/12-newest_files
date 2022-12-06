@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -1rt /path/to/files/ | tail -n 10
