@@ -1,2 +1,2 @@
 #!/bin/bash
-seq a z | xargs -n1 | grep -v oo | paste -s -d
+echo {a..z}{a..z}
