@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 #use if statements in while loops
 
-count=1
+count=0
 
 while [ "$count" != 10 ]
 do
