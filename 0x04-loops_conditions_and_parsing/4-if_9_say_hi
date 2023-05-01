@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+#use if statements in while loops
+
+count=1
+
+while [ "$count" != 10 ]
+do
+	if [ "$count" = 9 ]
+	then
+		echo "Hi"
+	fi
+	echo "Best School"
+	count=$((count+1))
+done
