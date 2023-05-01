@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+#print numbers for 1 to 20
+
+count=1
+while [ "$count" -le 20 ]
+do
+	echo "$count"
+	if [ "$count" = 4 ]
+	then
+		echo "bad luck from China"
+	elif [ "$count" = 9 ]
+	then
+		echo "bad luck from Japan"
+	elif [ "$count" = 17 ]
+	then
+		echo "bad luck from Italy"
+	fi
+	count=$((count+1))
+done
