@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+#killing processess
+trap "echo 'I am  invinciblei!!!'" 15
+
+while 'true'
+do
+	echo "To infinity and beyond"
+	sleep 2
+done
