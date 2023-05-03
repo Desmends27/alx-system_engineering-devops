@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
-#This is just a simple test with str Holberton
+#This is to just test ruby
 puts ARGV[0].scan(/School/).join
