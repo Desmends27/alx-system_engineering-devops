@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#Pings and how to use them
 ip=$1
 ping -c 5 "$ip"
