@@ -1,0 +1,29 @@
+Additional Elements:
+Firewalls: The three firewalls are added to enhance security by controlling incoming and outgoing network traffic. They help protect the infrastructure from unauthorized access and potential attacks.
+SSL Certificate: The SSL certificate is used to serve www.foobar.com over HTTPS, ensuring encrypted communication between the web servers and the clients, enhancing security and data privacy.
+Monitoring Clients: The monitoring clients collect and transmit data to a monitoring service (such as Sumologic). They enable proactive monitoring of the infrastructure's health, performance, and security.
+Firewalls:
+Firewalls act as a security barrier between the internal network and the internet. They monitor and control incoming and outgoing network traffic based on predefined security rules. Firewalls help prevent unauthorized access, protect against malicious activity, and enforce security policies.
+
+HTTPS Traffic:
+Serving traffic over HTTPS ensures that the communication between the clients (web browsers) and the website is encrypted. It secures sensitive data, such as login credentials and personal information, preventing eavesdropping, data tampering, and information theft.
+
+Monitoring:
+Monitoring is used to track the performance, availability, and security of the infrastructure. It helps identify issues, performance bottlenecks, and potential threats in real-time, allowing administrators to take proactive actions to maintain the website's stability and security.
+
+Data Collection in Monitoring:
+The monitoring tool collects data by deploying monitoring clients on the servers. These clients collect relevant system metrics, logs, and events and transmit them to a centralized monitoring service. The service then processes and analyzes the data to provide insights and alerts.
+
+Monitoring Web Server QPS:
+To monitor the web server's QPS (Queries Per Second), you can utilize monitoring tools that support web server metrics. These tools can collect information such as the number of incoming requests per second, response times, and error rates. By analyzing these metrics, you can gain insights into the server's performance and identify any potential bottlenecks or issues.
+
+Issues with the Infrastructure:
+
+Terminating SSL at the Load Balancer Level:
+Terminating SSL at the load balancer means that the encrypted traffic is decrypted at the load balancer and then forwarded to the backend servers in plain HTTP. This can pose a security risk as the internal network traffic is no longer encrypted. To mitigate this, it is recommended to maintain end-to-end encryption by enabling SSL/TLS communication between the load balancer and the backend servers.
+
+Single MySQL Server Accepting Writes:
+Having only one MySQL server capable of accepting writes creates a single point of failure for the database. If the server fails, it could result in data loss or an inability to write new data. To address this, implementing a database cluster with replication and high availability (such as a Primary-Replica configuration or a multi-master setup) can help improve fault tolerance and ensure data availability.
+
+Servers with Identical Components:
+Having servers with all the same components (database, web server, and application server) might lead to a lack of component-level redundancy. If a specific component fails across all servers simultaneously, it could result in a complete system outage. Introducing diversity in the infrastructure, such as using different hardware or software configurations, can help mitigate this issue and improve overall resilience.

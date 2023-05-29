@@ -1,0 +1,30 @@
+Additional Servers:
+By adding two servers to the infrastructure, we introduce redundancy and increase the system's reliability. This helps eliminate the single point of failure (SPOF) issue present in the previous one-server setup.
+
+Load Balancer (HAproxy):
+The load balancer distributes incoming traffic across multiple servers to ensure optimal utilization of resources and improve the website's availability. HAproxy is a widely used load balancing software that can be configured with various distribution algorithms, such as round-robin, least connection, or source IP-based, depending on the specific requirements.
+
+Distribution Algorithm:
+The load balancer can be configured with a distribution algorithm, such as round-robin, which evenly distributes incoming requests among the available servers. For example, if there are three servers, the load balancer will route the first request to server 1, the second request to server 2, and the third request to server 3, then repeat the cycle.
+
+Active-Active vs. Active-Passive Setup:
+In an Active-Active setup, all servers are actively serving requests simultaneously. The load balancer evenly distributes the traffic among them, and each server shares the workload. This configuration provides higher scalability and fault tolerance.
+
+In an Active-Passive setup, one server (the active node) handles the incoming requests while the other server (the passive node) remains idle, serving as a backup. If the active node fails, the passive node takes over. This configuration provides redundancy but may underutilize resources during normal operation.
+
+Database Primary-Replica (Master-Slave) Cluster:
+A Primary-Replica cluster for the database ensures data redundancy and fault tolerance. The Primary node (Master) is responsible for handling read and write operations. The Replica node (Slave) replicates the data from the Primary node and can take over as the Primary node if it fails.
+
+Difference between Primary and Replica in regard to the application:
+The application interacts primarily with the Primary node of the database cluster. It performs read and write operations, modifying the data stored in the Primary node. The Replica node serves as a backup and replicates the data from the Primary node but typically doesn't handle direct application requests.
+
+Issues with the Infrastructure:
+
+Single Point of Failure:
+While adding additional servers improves redundancy, there may still be single points of failure. For example, if the load balancer or the database Primary node fails, it could disrupt the availability of the website. Adding more servers or implementing redundancy within each component can further mitigate this risk.
+
+Security Issues:
+The infrastructure as described does not include a firewall or HTTPS configuration. This exposes the system to potential security risks. Implementing a firewall to control incoming traffic and configuring HTTPS with SSL/TLS certificates are essential security measures to protect user data and prevent unauthorized access.
+
+Lack of Monitoring:
+Without proper monitoring tools and processes in place, it becomes challenging to detect and address issues proactively. Monitoring helps identify performance bottlenecks, server failures, and other potential problems. Implementing monitoring solutions ensures timely detection and enables quick resolution of issues.
