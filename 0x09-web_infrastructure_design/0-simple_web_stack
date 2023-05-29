@@ -1,0 +1,36 @@
+Let's start with a user wanting to access the website.
+
+User Access:
+When a user wants to access the website www.foobar.com, they enter the domain name (foobar.com) in their web browser. The user's computer sends a request to the Domain Name System (DNS) to resolve the domain name to an IP address.
+
+Domain Name:
+A domain name is a human-readable address that represents an IP address. In this case, foobar.com is the domain name. It serves as a unique identifier for the website and allows users to access it easily without needing to remember the server's IP address.
+
+DNS Record:
+The www record in www.foobar.com is a DNS record called a subdomain. It specifies that the user wants to access the web content associated with the subdomain "www" within the foobar.com domain. The DNS record for www.foobar.com should be configured to point to the server's IP address, which in this case is 8.8.8.8.
+
+Server:
+A server is a computer or system that provides services and resources to other computers or clients. In this infrastructure, the server (with IP 8.8.8.8) hosts all the necessary components to serve the website, including the web server, application server, and database.
+
+Web Server (Nginx):
+The web server (in this case, Nginx) is responsible for handling incoming HTTP requests from users and serving the appropriate web pages or resources. It listens for requests on port 80 (HTTP) or 443 (HTTPS) and communicates with the application server to process dynamic content generation.
+
+Application Server:
+The application server hosts the application files, which contain the website's codebase. It handles the dynamic processing of requests, executing the necessary logic, and generating responses to be served by the web server. The application server communicates with the database server to retrieve and store data.
+
+Database (MySQL):
+The database server (MySQL) is responsible for storing and managing the website's data. It allows the application server to perform read and write operations on the database. The database stores information such as user accounts, content, configurations, and other relevant data.
+
+Communication with User's Computer:
+When a user requests the website, their computer communicates with the server using the HTTP protocol. The user's web browser sends an HTTP request to the server's IP address (8.8.8.8) through the network. The web server receives the request, forwards it to the application server for processing, and returns an HTTP response back to the user's computer.
+
+Issues with the Infrastructure:
+
+Single Point of Failure (SPOF):
+This infrastructure has a single server, which means it has a single point of failure. If the server goes down or experiences any issues, the website will become inaccessible. To mitigate this, a redundant or load-balanced setup with multiple servers should be considered.
+
+Downtime during Maintenance:
+When maintenance is needed, such as deploying new code that requires restarting the web server, the website may experience downtime. During this period, users will be unable to access the website. Strategies like rolling deployments or using a reverse proxy can help minimize downtime.
+
+Limited Scalability:
+With only one server, this infrastructure may struggle to handle a significant increase in incoming traffic. If the website experiences high traffic or a sudden surge in users, the server's resources could become overwhelmed. Scaling the infrastructure by adding more servers, implementing load balancing, or utilizing cloud-based solutions can address this limitation.
