@@ -28,27 +28,3 @@ echo "server {
 
 sudo mv -f default /etc/nginx/sites-available/default
 sudo service nginx restart
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
