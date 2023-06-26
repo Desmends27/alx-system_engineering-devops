@@ -4,10 +4,10 @@
 path="$1"
 ip="$2"
 name="$3"
-pathscp="$4"
+ssh="$4"
 if [ "$#" -lt 3 ]
 then
 	echo "Usage: 0-transfer_file PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
 else
-	scp "$path" "$name"@"$ip":"$pathscp"
+	scp -i "$ssh" "$path" "$name"@"$ip":~/
 fi
