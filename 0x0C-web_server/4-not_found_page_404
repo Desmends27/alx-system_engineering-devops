@@ -2,8 +2,9 @@
 # Set up a 404 error page
 
 sudo apt install -y nginx
+sduo service nginx start
 sudo ufw allow 'Nginx HTTP'
-echo "Hello World!" | sudo tee /var/www/html/index.html
+echo "Hello World!" > /var/www/html/nginx-debian.html
 
 echo "Ceci n'est pas une page" >> /var/www/html/error_404.html
 echo "server {
