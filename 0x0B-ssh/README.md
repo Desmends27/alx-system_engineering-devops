@@ -1,1 +1,1 @@
-Connecting to an ssh
+Basic usage of ssh and connecting to server
