@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+#start apache on a docker container and return a page 
+#containing hello holberton
+service apache2 start
