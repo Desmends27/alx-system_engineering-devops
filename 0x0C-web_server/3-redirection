@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 # Configure my nginx server
 
+sudo apt update
+sudo apt install -y nginx
+sudo ufw allow 'Nginx HTTP'
 sudo cp /etc/nginx/sites-available/default /etc/nginx/sites-available/default.bck
 
 echo "Hello World!" | sudo tee /var/www/html/index.html
@@ -18,4 +21,3 @@ echo 'server {
 }' | sudo tee /etc/nginx/sites-available/default
 
 sudo service nginx restart
-
