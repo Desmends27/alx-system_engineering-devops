@@ -1,10 +1,20 @@
 #!/usr/bin/env bash
-#script to install nginx on a server
+#configure HAproxy to run on a loadbalancing server
 
-sudo apt update
-sudo apt -y install nginx
-sudo ufw allow 'Nginx HTTP'
-echo "Hello World!" >  hello
-sudo cp  hello /var/www/html/index.nginx-debian.html
-rm hello
-sudo service nginx restart
+ufw allow 1344
+sudo apt-get update
+sudo apt install -y haproxy
+
+echo "
+backend web-backend
+        balance roundrobin
+        option forwardfor
+        server 9318-web-01 3.236.115.124:80 check
+        server 9318-web-02 3.227.233.5:80 check
+frontend proxynode
+        bind *:80
+        mode http
+        default_backend web-backend
+        " | sudo tee -a  /etc/haproxy/haproxy.cfg
+sudo service haproxy restart
+~                                
