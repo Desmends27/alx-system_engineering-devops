@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 # Configure HAProxy to run on a load balancing server
 
-ufw allow 1344
+sudo ufw allow 1344
 sudo apt-get update
 sudo apt install -y haproxy
 
