@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 #start nginx as user nginx 
-sudo apt-get update
-sudo chown nginx:nginx /etc/nginx
+sudo chown nginx:nginx /etc/nginx/nginx.conf
 sudo chown nginx:nginx /var/log/nginx
 sudo chown nginx:nginx /etc/nginx/sites-available/default
 chmod 755 /etc/nginx/nginx.conf
 sed -i "s/#user www-data/user nginx" /etc/nginx/nginx.conf
 sed -i "s/80/8080" /etc/nginx/sites-available/default
 pkill apache2
-su nginx serive nginx restart
+su nginx service nginx restart
