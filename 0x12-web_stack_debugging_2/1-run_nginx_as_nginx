@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#run nginx as user nginx
 sudo chown nginx:nginx /etc/nginx
 sudo chown nginx:nginx /var/log/nginx
 sudo chown nginx:nginx /etc/nginx/sites-available/default
