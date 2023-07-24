@@ -3,7 +3,8 @@
 sudo apt-get update
 sudo chown nginx /etc/nginx
 sudo chown nginx /var/log/nginx
-chmod 700 /etc/nginx/nginx.conf
+chmod 755 /etc/nginx/nginx.conf
 sed -i "s/#user www-data/user nginx" /etc/nginx/nginx.conf
 sed -i "/s80/8080" /etc/nginx/sites-available/default
+pkill apache2
 su nginx serive nginx restart
