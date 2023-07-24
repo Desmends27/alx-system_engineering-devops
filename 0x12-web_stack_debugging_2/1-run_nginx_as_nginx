@@ -4,5 +4,6 @@ sudo apt-get update
 sudo chown nginx /etc/nginx
 sudo chown nginx /var/log/nginx
 sed -i "s/#user www-data/user nginx" /etc/nginx/nginx.conf
-sed -i "/s80/8080" /etc/nginx/sites-available/default
-nginx -c /etc/nginx/nginx.conf
+sed -i "/s80/8080" /etc/nginx/sites-available/defaul
+t
+su nginx serive nginx restart
