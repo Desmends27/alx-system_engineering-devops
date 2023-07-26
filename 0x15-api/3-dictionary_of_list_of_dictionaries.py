@@ -16,7 +16,7 @@ if __name__ == '__main__':
         todos_list = []
         for action in todos:
             task_dict = {
-                "username": user["name"],
+                "username": user["username"],
                 "task": action["title"],
                 "completed": action["completed"],
                 }
