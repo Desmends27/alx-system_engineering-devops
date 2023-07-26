@@ -13,7 +13,7 @@ if __name__ == '__main__':
     todo_list = get(url2).json()
     # Assuming user_id is defined or obtained from somewhere
     with open(f'{user_id}.csv', 'w') as csv_file:
-        writer = csv.writer(csv_file, quoting=csv.QUOTE_ALL)
+        writer = csv.writer(csv_file, delimiter=',', quoting=csv.QUOTE_ALL)
         for action in todo_list:
             writer.writerow([user_id, users['name'],
                             action['completed'], action['title']])
