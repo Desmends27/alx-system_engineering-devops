@@ -20,4 +20,4 @@ if __name__ == '__main__':
     print("Employee {} is done with tasks({}/{}):".format(users['name'],
                                                           completed, total))
     for entry in todo_list:
-        print(' \t{}'.format(entry['title']))
+        print('\t {}'.format(entry['title']))
