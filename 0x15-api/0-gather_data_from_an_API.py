@@ -13,11 +13,14 @@ if __name__ == '__main__':
     todo_list = get(url2).json()
     completed = 0
     total = 0
+    completed_list = []
     for entry in todo_list:
         if entry['completed'] is True:
             completed += 1
+            completed_list.append(entry['title'])
         total += 1
     print("Employee {} is done with tasks({}/{}):".format(users['name'],
                                                           completed, total))
-    for entry in todo_list:
-        print('\t {}'.format(entry['title']))
+
+    for val in completed_list:
+        print("\t {}".format(val))
