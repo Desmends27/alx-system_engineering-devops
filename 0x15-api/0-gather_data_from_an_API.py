@@ -17,7 +17,7 @@ if __name__ == '__main__':
         if entry['completed'] is True:
             completed += 1
         total += 1
-    print("{} is done with tasks({}/{}:)".format(users['name'],
+    print("Employee {} is done with tasks({}/{}:)".format(users['name'],
                                                  completed, total))
     for entry in todo_list:
         print('\t{}'.format(entry['title']))
