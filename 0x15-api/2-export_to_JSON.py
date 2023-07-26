@@ -16,7 +16,7 @@ if __name__ == '__main__':
         task_dict = {
                 "task": action["title"],
                 "completed": action["completed"],
-                "username": users["name"]
+                "username": users["username"]
                 }
         todo_dict.append(task_dict)
     final_dict = {user_id: todo_dict}
