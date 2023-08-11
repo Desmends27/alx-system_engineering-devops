@@ -11,18 +11,18 @@ def recurse(subreddit, hot_list=[], after=None):
     params = {
         'after': after
     }
-    result = requests.get(f"https://www.reddit.com/r/{subreddit}/hot.json",
+    r = requests.get(f"https://www.reddit.com/r/{subreddit}/hot.json",
                           headers=headers, params=params)
-
-    if result.status_code == 404:
+    if r.status_code == 200:
+        json = r.json()
+        data_dict = json.get('data')
+        post_list = data_dict.get('children')
+        for post in post_list:
+            post_data_dict = post.get('data')
+            hot_list.append(post_data_dict.get('title'))
+        after = data_dict.get('after')
+        if data_dict.get('after') is None:
+            return hot_list
+        return recurse(subreddit, hot_list, after)
+    else:
         return None
-
-    result = result.json()
-    posts = result.get('data').get('children')
-    for post in posts:
-        hot_list.append(post.get('data').get('title'))
-    after = result.get('data').get('after')
-    if result.get('data').get('after') is None:
-        return hot_list
-
-    return recurse(subreddit, hot_list, after)
