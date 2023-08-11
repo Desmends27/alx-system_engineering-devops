@@ -6,13 +6,12 @@ import requests
 
 
 def recurse(subreddit, hot_list=[], after=None):
-    headers = {'User-Agent': 'linux:desmends:v1.2.0\
-                (by /u/HealthyCaterpillar48'}
-    params = {
-        'after': after
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_14_2) Apple' +
+        'WebKit/537.36 (KHTML, like Gecko) Chrome/76.0.3809.132 Safari/537.36'
     }
-    r = requests.get(f"https://www.reddit.com/r/{subreddit}/hot.json",
-                          headers=headers, params=params)
+    r = requests.get('https://www.reddit.com/r/{:}/hot.json?after={:}'.format(
+        subreddit, after), headers=headers, allow_redirects=False)
     if r.status_code == 200:
         json = r.json()
         data_dict = json.get('data')
