@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-#This script displays "Best School" using a while loop
-count=9
-while [ "$count" -ge 0 ]
-do
-	echo "Best School"
-	count=$(("$count"-1))
-done
