@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-#kill the 7-highlander
-var=$(pgrep -f "7-highlander")
-kill -SIGKILL "$var"
