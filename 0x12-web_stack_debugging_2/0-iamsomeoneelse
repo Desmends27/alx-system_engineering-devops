@@ -1,7 +1,0 @@
-#!/usr/bin/env bash
-#use the whoami command
-if [ $# -eq 1 ]; then
-	echo "$1"
-else
-	whoami
-fi

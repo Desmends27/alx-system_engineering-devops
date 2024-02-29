@@ -1,1 +1,0 @@
-Setup firewall on serever
