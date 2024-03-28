@@ -1,0 +1,6 @@
+Host *
+	AddKeysToAgent yes
+	IdentityFile ~/.ssh/id_ed25519
+Host 54.157.133.38
+	IdentityFile ~/.ssh/school
+	PasswordAuthentication no
