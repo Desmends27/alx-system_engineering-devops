@@ -1,3 +1,3 @@
 #!/usr/bin/bash
--- takes a url and sendsa url request
-curl -d -o $1
+ #takes a url and sendsa url request
+curl -sI "$1" | grep content-length
