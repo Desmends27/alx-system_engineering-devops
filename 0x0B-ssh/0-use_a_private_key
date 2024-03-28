@@ -1,2 +1,3 @@
 #!/usr/bin/env bash
-scp -p ~/.ssh/school ubuntu@54.157.133.38
+# connect to a remote server
+ssh -i ~/.ssh/school ubuntu@54.157.133.38
