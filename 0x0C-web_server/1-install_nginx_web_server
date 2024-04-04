@@ -2,5 +2,7 @@
 #Install nginx and configure to say hello world
 sudo apt update
 sudo apt install nginx
+sudo service nginx start
 sudo rm /var/www/html/index.nginx-debian.html
 echo "Hello World"  > /var/www/html/index.html
+sudo service nginx restart
