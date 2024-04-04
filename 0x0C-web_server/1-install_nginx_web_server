@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+#Install nginx and configure to say hello world
+sudo apt update
+sudo apt install nginx
+sudo rm /var/www/html/index.nginx-debian.html
+echo "Hello World"  | /var/www/html/index.html | sudo tee file
