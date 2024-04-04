@@ -3,4 +3,4 @@
 sudo apt update
 sudo apt install nginx
 sudo rm /var/www/html/index.nginx-debian.html
-echo "Hello World"  | /var/www/html/index.html | sudo tee file
+echo "Hello World"  > /var/www/html/index.html
