@@ -1,0 +1,38 @@
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+    add_header X-Served-By 188885-web-01;
+
+    # Serve the website content
+    location / {
+        root /data/web_static/current;
+        index 101-index.html;
+    }
+
+    # Serve images
+    location /images/ {
+        alias /data/web_static/current/images/;
+    }
+
+    location /airbnb-onepage/ {
+           proxy_pass http://localhost:5000/airbnb-onepage;
+           roxy_redirect off;
+        }
+    # Serve styles
+    location /styles/ {
+        alias /data/web_static/current/styles/;
+    }
+
+    # Handle redirection
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+
+    # Handle 404 errors
+    error_page 404 /error404.html;
+    location = /error404.html {
+        internal;
+        root /var/www/html;
+    }
+}
+
